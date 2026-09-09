@@ -149,9 +149,9 @@ jobs:
           {
             echo "### Shirone deploy"
             echo ""
-            echo "- 内容仓：\`${CONTENT_REPOSITORY}\`"
-            echo "- 内容 ref：\`${{ steps.target.outputs.ref }\`"
-            echo "- 内容 commit：\`${{ steps.content.outputs.sha }}\`"
+            echo "- 内容仓：${CONTENT_REPOSITORY}"
+            echo "- 内容 ref：${{ steps.target.outputs.ref }}"
+            echo "- 内容 commit：${{ steps.content.outputs.sha }}"
             if [ -f content.lock.json ]; then
               echo ""
               echo "<details><summary>content.lock.json</summary>"
