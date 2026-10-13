@@ -70,7 +70,6 @@ const fieldI18nKeys = {
  */
 export const siteRemarkPlugins = [
 	remarkEscapeNumericColons,
-	remarkIncludes,
 	remarkContentAnnotations,
 	remarkAbbreviations,
 	remarkAdmonitions,
@@ -90,6 +89,10 @@ export const siteRemarkPlugins = [
 	remarkArtPlayer,
 	remarkBilibili,
 	remarkYouTube,
+	// remarkIncludes 劫持 parser 做源码展开，必须排在所有 parser 劫持型
+	// 插件之后注册（劫持链后注册先执行），include 进来的内容才能被
+	// collapse/field/file-tree 等源码级语法插件处理。
+	remarkIncludes,
 	remarkFeatureProbes,
 	remarkSectionize,
 	parseDirectiveNode,
